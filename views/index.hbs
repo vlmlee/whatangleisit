@@ -1,4 +1,5 @@
 <div class="main">
+    <!-- first section - clock -->
     <section class="section-1">
         <div id='loading'>
             <h1> What Angle Is It? </h1>
@@ -6,9 +7,10 @@
                 <p>
         </div>
         <div class="clock">
-            <img src="/images/second.svg" class="clockhand secondhand"></img>
-            <img src="/images/minute.svg" class="clockhand minutehand"></img>
-            <img src="/images/hour.svg" class="clockhand hourhand"></img>
+            <!-- The ordering works like a stack. The first item will be at the bottom. -->
+            <img src="/images/hour.v2.svg" class="clockhand hourhand"></img>
+            <img src="/images/minute.v2.svg" class="clockhand minutehand"></img>
+            <img src="/images/second.v2.svg" class="clockhand secondhand"></img>
         </div>
         <div class="hour-minute indicators">
             <h2 class="title"> Hour & Minute </h2>
@@ -25,10 +27,15 @@
             <hr width="106px" color="#222222">
             <h2 class="hs-content"></h2>
         </div>
+        <!--//
+            With the use of the onepage-scroll plugin, the link will move to the next section.
+            For more info on onepage-scroll, visit https://github.com/peachananr/onepage-scroll.
+        //-->
         <div class="bottom-link about">
             <a href="/#2" class="about hvr-wobble-vertical">about</a>
         </div>
     </section>
+    <!-- second section - about -->
     <section class="section-2">
         <div class="page_container">
             <h1> about </h1>
@@ -38,6 +45,7 @@
             <a href="/#3" class="info hvr-wobble-vertical">Info</a>
         </div>
     </section>
+    <!-- third section - visit my website -->
     <section class="section-3">
         <div class="page_container">
             <h1>Visit my website at <a href="http://www.corollari.com" class="homepage-link">www.corollari.com</a>.</h1>
