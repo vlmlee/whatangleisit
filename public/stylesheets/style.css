@@ -31,6 +31,11 @@ hr {
 
 a {
     text-decoration: none;
+    color: #f9f9f9;
+}
+
+a:hover {
+    color: #222222;
 }
 
 h1 {
@@ -119,22 +124,41 @@ h2 {
 }
 
 .section-2 h1 {
-    margin-top: 20px;
-    padding: 0 0 60px 0;
+    margin-top: -120px;
+    padding: 0;
     color: #f9f9f9;
     font-family: Montserrat, 'Helvetica', monospace;
 }
 
 .section-2 p {
     color: #f9f9f9;
-    padding: 0 30px;
+    padding: 0 30px 10px 30px;
+}
+
+.heading {
+    margin-bottom: 30px;
+}
+
+.ex {
+    text-align: left;
+    line-height: 1.25em;
 }
 
 .section-3 {
+    background-color: #fefefe;
+}
+
+.section-3 p {
+    margin-top: -60px;
+    padding: 0 30px 10px 30px;
+    color: #222222;
+}
+
+.section-4 {
     background-color: #32B38D;
 }
 
-.section-3 h1 {
+.section-4 h1 {
     color: #f9f9f9;
     font-family: Montserrat, 'Helvetica', monospace;
 }
@@ -146,10 +170,10 @@ h2 {
 
 .clockhand {
     position: absolute;
-    top: 10%;
-    left: 10%;
-    height: 80%;
-    width: 80%;
+    top: 5%;
+    left: 5%;
+    height: 90%;
+    width: 90%;
     // included below to severely reduce CPU usage (!)
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
@@ -214,12 +238,13 @@ h2 {
     text-decoration: none;
 }
 
-.about {
+.about,
+.info {
     color: #222222;
     font-size: 2em;
 }
 
-.info {
+.more {
     color: #f9f9f9;
     font-size: 2em;
 }

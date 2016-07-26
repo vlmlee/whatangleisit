@@ -39,19 +39,46 @@
     <section class="section-2">
         <div class="page_container">
             <h1> about </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae nunc nec neque sodales venenatis. Sed faucibus aliquam bibendum. Cras eu finibus elit. Cras sed orci vulputate, tristique libero sed, sollicitudin ligula. In aliquam egestas ultricies. Proin pretium elementum dui, at euismod urna tempus eu. Nunc vestibulum nisi in justo malesuada, at rhoncus eros laoreet. Donec vel purus at dui commodo luctus. Etiam molestie consectetur odio ut scelerisque. Proin leo justo, varius a condimentum eu, eleifend at mauris. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis in risus non nisl consectetur condimentum. Fusce eget lobortis metus. Ut quis tempus dolor. Aenean hendrerit velit vestibulum nulla elementum iaculis. Cras id mauris lacinia, pulvinar justo vitae, finibus lectus. Nulla vel turpis nisi. Quisque convallis, diam sed hendrerit porta, ex dolor interdum urna, vel condimentum odio ante quis purus. Curabitur semper lacus turpis, nec vestibulum neque semper non. Sed sagittis vitae est ut porta. Vestibulum fermentum id massa a ornare. Praesent velit ipsum, blandit a quam vel, bibendum pharetra ex. Mauris tincidunt semper tellus sit amet mattis. Sed rutrum dui erat. Curabitur efficitur luctus urna, euismod egestas ipsum dignissim et. Nunc euismod mi ut nibh bibendum, id dictum lacus sagittis. Nullam quis auctor lacus. Pellentesque congue nunc sapien, sed pellentesque augue iaculis ut. Phasellus aliquam purus et diam malesuada ullamcorper. Donec feugiat augue quis sapien tristique commodo. Vestibulum lacinia posuere libero, posuere fermentum elit scelerisque vel. Nullam vel vestibulum est, ultrices sagittis velit. Mauris in neque nisl.</p>
+            <p class="heading">This little app was inspired by <a href="http://whatcolourisit.scn9a.org/">>>What Color Is It?<<</a>.</p>
+            <p class="ex"> The way to figure out the angle between the clock hands is to realize that you can calculate the angle of each clock hand relative to 12 o’clock independently. By taking the difference of any two, you can get the angle in between.
+                <br>
+                <br> We break up the angles into three parts: the second, minute, and hour hands. It takes 60 seconds for the second hand to complete 360 degrees, 3600 seconds for the minute hand to complete 360 degrees, and 43200 seconds for the hour hand to complete 360 degrees. This means that the second hand moves \( \frac{360 \space degrees}{60 \space sec} = \) 6 degrees per second. By the same calculation, the minute hand moves 0.1 degrees per second, and the hour hand, 0.00833 degrees per second. For every minute, the second hand completes 360 degrees, the minute hand completes 6 degrees, and the hour hand completes 0.5 degrees. Every hour, the hands complete 21,600, 360, and 30 degrees respectively.
+                <br>
+                <br> With this in mind, the angle of the hour hand relative to 12 o'clock is 30 degrees times the hour plus some offset dependent on the minute and second. But we've already found out what that offset was--- we add 0.5 degrees for every minute and 0.00833 degrees for every second that had passed. So for the hour hand, the formula is \( 30 * H + 0.5 * M + .00833 * S \). Likewise, the minute hand is \( 6 * M + 0.1 * S \) (the minute hand doesn't depend on the hour hand for an offset) and the second hand is \( 6 * S\).
+
+                <br>
+                <br> What about the angle in between? Simply subtract one from another. $$ 30 * H + 0.5 * M + .00833 * S - (6 * M + 0.1 * S) = 30 * H - 5.5 * M - .091667 * S $$ One case we will need to be careful about is when the time is 12 o'clock. We can fix this by using the modulo operator, setting \( H\ mod\ 12 \).</p>
         </div>
-        <div class="bottom-link info">
-            <a href="/#3" class="info hvr-wobble-vertical">Info</a>
+        <div class="bottom-link more">
+            <a href="/#3" class="more hvr-wobble-vertical">more</a>
         </div>
     </section>
-    <!-- third section - visit my website -->
+
+
+    <!-- third section - more info -->
     <section class="section-3">
+        <div class="page_container">
+            <p class="ex">
+                But there is a slight ambiguity. There are angles that we can choose, ones outside \( \pm \)180 degrees and ones inside \( \pm \)180 degrees. If we want to always receive the small angle in between, how can we handle that? A little bit of trivial: that particular angle is called the conjugate angle. Sounds familiar right?
+                <br>
+                <br> If we look at the complex conjugate of Euler’s famous formula, we have $$Z = e^{ix} = cos(x) + i sin(x) \qquad \overline{Z} = e^{-ix} = cos(x) - isin(x).$$ Let \(x = 2 \pi - y\). We have then $$\overline{Z} = e ^{- i ( 2\pi - y)} = e ^{-2\pi i} * e ^{iy} = cos(2\pi - y) - i(sin(2\pi - y))$$ Z is cyclical such that for \(n \in \mathbb{Z} \) $$ e ^{-in\pi} = \begin{cases} \space \space \space 1,& \text{n is even} \\ -1, & \text{n is odd} \end{cases} $$ With this knowledge and the trigonometric identities $$cos(x) = cos(2\pi - y) = cos(-y) = cos(y) \qquad sin(x) = sin(2\pi - y) = sin(-y) = - sin(y) $$ we get \( e^{iy} = cos(y) + i sin (y) = e^{-ix} \) hence the etymology of the conjugate angle.
+
+                <br>
+                <br> Another way of looking at this is to have the complex number flipped over the real number line. The quadrants above the x-axis contains all the angles below 180 degrees and the quadrant below contains the angles above 180 degrees, given we're looking at \(0 \leq x \leq 2\pi\). </p>
+        </div>
+        <div class="bottom-link info">
+            <a href="/#4" class="info hvr-wobble-vertical">info</a>
+        </div>
+    </section>
+
+
+    <!-- fourth section - visit my website -->
+    <section class="section-4">
         <div class="page_container">
             <h1>Visit my website at <a href="http://www.corollari.com" class="homepage-link">www.corollari.com</a>.</h1>
         </div>
         <div class="bottom-link top">
-            <a href="/#3" class="top hvr-wobble-vertical">back to top</a>
+            <a href="/#1" class="top hvr-wobble-vertical">back to top</a>
         </div>
     </section>
 </div>

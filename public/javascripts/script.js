@@ -68,9 +68,9 @@ function animateClockHands(sdegree, mdegree, hdegree) {
         angleBetweenMinuteAndSecond = mdegree - sdegree;
         angleBetweenHourAndMinute = hdegree - mdegree;
 
-        $('.hm-content').replaceWith('<h2 class=\"hm-content\">' + conjugate(angleBetweenHourAndMinute).toFixed(1) + '°</h2>');
-        $('.ms-content').replaceWith('<h2 class=\"ms-content\">' + conjugate(angleBetweenMinuteAndSecond).toFixed(1) + '°</h2>');
-        $('.hs-content').replaceWith('<h2 class=\"hs-content\">' + conjugate(angleBetweenHourAndSecond).toFixed(1) + '°</h2>');
+        $('.hm-content').html(conjugate(angleBetweenHourAndMinute).toFixed(1) + '°');
+        $('.ms-content').html(conjugate(angleBetweenMinuteAndSecond).toFixed(1) + '°');
+        $('.hs-content').html(conjugate(angleBetweenHourAndSecond).toFixed(1) + '°');
 
         animateClockHands(sdegree, mdegree, hdegree);
     }, 1000);
@@ -80,7 +80,7 @@ $(document).ready(function() {
 
     setTimeout(function() {
         $('#loading').remove();
-    }, 3000);
+    }, 2000);
 
     $('.main').onepage_scroll({
         sectionContainer: 'section',
@@ -95,9 +95,13 @@ $(document).ready(function() {
         $('.main').moveTo(2);
     });
 
-    $('.info').on('click', function() {
+    $('.more').on('click', function() {
         $('.main').moveTo(3);
     });
+
+    $('.info').on('click', function() {
+        $('.main').moveTo(4);
+    })
 
     $('.top').on('click', function() {
         $('.main').moveTo(1);

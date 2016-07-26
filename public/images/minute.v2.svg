@@ -3,10 +3,14 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="1280px" height="1280px" viewBox="0 0 1280 1280" enable-background="new 0 0 1280 1280" xml:space="preserve">
-<circle fill="none" stroke="#E9E9E9" stroke-miterlimit="10" cx="639.865" cy="639.851" r="640"/>
-<rect x="615" y="179.5" stroke="#FFFFFF" stroke-miterlimit="10" width="50" height="500.5"/>
-<circle fill="#E9E9E9" stroke="#000000" stroke-miterlimit="10" cx="640" cy="640" r="5"/>
-<path fill="none" stroke="#FFFFFF" stroke-width="58" stroke-miterlimit="10" d="M664.833,303.166"/>
-<line fill="none" stroke="#FFFFFF" stroke-width="46" stroke-miterlimit="10" x1="640" y1="194.875" x2="640" y2="181.5"/>
-<line fill="none" stroke="#FFFFFF" stroke-width="46" stroke-miterlimit="10" x1="640" y1="210.062" x2="640" y2="196.687"/>
+<g>
+	<circle fill="none" stroke="#E9E9E9" stroke-miterlimit="10" cx="639.865" cy="639.851" r="640"/>
+	<polygon points="636.75,179.5 639.865,179.5 643.062,179.5 652.53,680 627.469,680 	"/>
+	<polygon fill="none" stroke="#FFFFFF" stroke-miterlimit="10" points="636.75,179.5 639.865,179.5 643.062,179.5 652.562,680 
+		652.562,680 627.5,680 627.5,680 	"/>
+	<circle fill="#E9E9E9" cx="640" cy="640" r="5"/>
+	<circle fill="none" stroke="#000000" stroke-miterlimit="10" cx="640" cy="640" r="5"/>
+	<line fill="none" stroke="#FFFFFF" stroke-width="46" stroke-miterlimit="10" x1="640" y1="196.875" x2="640" y2="183.5"/>
+	<line fill="#FFFFFF" stroke="#FFFFFF" stroke-width="46" stroke-miterlimit="10" x1="640" y1="214.062" x2="640" y2="200.687"/>
+</g>
 </svg>
