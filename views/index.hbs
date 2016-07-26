@@ -1,17 +1,25 @@
 <div class="main">
+
+
     <!-- first section - clock -->
     <section class="section-1">
+
+
         <div id='loading'>
             <h1> What Angle Is It? </h1>
             <p>Loading...
                 <p>
         </div>
+
+
         <div class="clock">
             <!-- The ordering works like a stack. The first item will be at the bottom. -->
             <img src="/images/hour.v2.svg" class="clockhand hourhand"></img>
             <img src="/images/minute.v2.svg" class="clockhand minutehand"></img>
             <img src="/images/second.v2.svg" class="clockhand secondhand"></img>
         </div>
+
+
         <div class="hour-minute indicators">
             <h2 class="title"> Hour & Minute </h2>
             <hr width="98px" color="#222222">
@@ -35,16 +43,19 @@
             <a href="/#2" class="about hvr-wobble-vertical">about</a>
         </div>
     </section>
+
+
     <!-- second section - about -->
     <section class="section-2">
         <div class="page_container">
             <h1> about </h1>
-            <p class="heading">This little app was inspired by <a href="http://whatcolourisit.scn9a.org/">>>What Color Is It?<<</a>.</p>
+            <p class="heading">This little app was inspired by <a href="http://whatcolourisit.scn9a.org/">>>What Color Is It?<<</a>.
+                <br>Created by Michael Lee.</p>
             <p class="ex"> The way to figure out the angle between the clock hands is to realize that you can calculate the angle of each clock hand relative to 12 o’clock independently. By taking the difference of any two, you can get the angle in between.
                 <br>
                 <br> We break up the angles into three parts: the second, minute, and hour hands. It takes 60 seconds for the second hand to complete 360 degrees, 3600 seconds for the minute hand to complete 360 degrees, and 43200 seconds for the hour hand to complete 360 degrees. This means that the second hand moves \( \frac{360 \space degrees}{60 \space sec} = \) 6 degrees per second. By the same calculation, the minute hand moves 0.1 degrees per second, and the hour hand, 0.00833 degrees per second. For every minute, the second hand completes 360 degrees, the minute hand completes 6 degrees, and the hour hand completes 0.5 degrees. Every hour, the hands complete 21,600, 360, and 30 degrees respectively.
                 <br>
-                <br> With this in mind, the angle of the hour hand relative to 12 o'clock is 30 degrees times the hour plus some offset dependent on the minute and second. But we've already found out what that offset was--- we add 0.5 degrees for every minute and 0.00833 degrees for every second that had passed. So for the hour hand, the formula is \( 30 * H + 0.5 * M + .00833 * S \). Likewise, the minute hand is \( 6 * M + 0.1 * S \) (the minute hand doesn't depend on the hour hand for an offset) and the second hand is \( 6 * S\).
+                <br> With this in mind, the angle of the hour hand relative to 12 o'clock is 30 degrees times the hour plus some offset dependent on the minute and second. But we've already found out what that offset was; we add 0.5 degrees for every minute and 0.00833 degrees for every second that had passed. So for the hour hand, the formula is \( 30 * H + 0.5 * M + .00833 * S \). Likewise, the minute hand is \( 6 * M + 0.1 * S \) (the minute hand doesn't depend on the hour hand for an offset) and the second hand is \( 6 * S\).
 
                 <br>
                 <br> What about the angle in between? Simply subtract one from another. $$ 30 * H + 0.5 * M + .00833 * S - (6 * M + 0.1 * S) = 30 * H - 5.5 * M - .091667 * S $$ One case we will need to be careful about is when the time is 12 o'clock. We can fix this by using the modulo operator, setting \( H\ mod\ 12 \).</p>
