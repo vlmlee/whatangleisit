@@ -79,6 +79,20 @@ h2 {
     margin: 0;
 }
 
+.footer {
+    position: absolute;
+    bottom: 2%;
+    left: 46%;
+    font-family: Montserrat, 'Helvetica', monospace;
+    font-size: 0.5em;
+    text-decoration: none;
+    color: #f9f9f9;
+}
+
+.footer-dark-text {
+    color: #444;
+}
+
 
 /*-----------------------*\
          SECTIONS
