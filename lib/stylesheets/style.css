@@ -2,6 +2,12 @@
            MAIN
 \*-----------------------*/
 
+@font-face {
+    font-family: Montserrat;
+    src: local("Montserrat"), local("Montserrat"), url(../fonts/Montserrat-Regular.otf);
+    font-weight: normal;
+}
+
 html {
     height: 100%;
 }
