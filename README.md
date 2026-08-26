@@ -2,7 +2,7 @@
 
 ## About
 
-This project was inspired by [What Colour Is It?](http://whatcolourisit.scn9a.org/). I used it as my screensaver and thought 
+This project was inspired by [The Colour Clock](http://www.thecolourclock.com/). I used it as my screensaver and thought 
 an angle variant would be interesting.
 
 ## Solution?
