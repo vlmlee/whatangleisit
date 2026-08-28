@@ -406,7 +406,6 @@ section .page_container .btns a {
     display: inline-flex;
     align-items: stretch;
     gap: 0;
-    padding: 3px;
     background: rgba(34, 34, 34, 0.08);
     border-radius: 999px;
     font-family: Montserrat, 'Helvetica', monospace;
@@ -455,7 +454,8 @@ section .page_container .btns a {
     background: transparent;
     color: #222222;
     font: inherit;
-    font-size: 0.85em;
+    font-size: 0.75em;
+    font-weight: 600;
     letter-spacing: 0.02em;
     cursor: pointer;
     transition: color 0.2s ease;
