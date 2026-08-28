@@ -150,14 +150,6 @@ section .page_container .btns a {
     position: relative;
 }
 
-.section-1 h1 {
-    padding-top: 320px;
-    padding-bottom: 30px;
-    font-size: 4em;
-    width: 100%;
-    text-align: center;
-}
-
 .section-2 {
     background-color: #E9605F;
     color: #f9f9f9;
@@ -215,18 +207,18 @@ section .page_container .btns a {
 \*-----------------------*/
 
 #loading {
-    background: url(../images/ellipsis.gif) no-repeat center center;
-    background-size: 60px 60px;
     background-color: white;
     position: absolute;
     height: 100%;
     width: 100%;
     overflow: hidden;
     z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #loading h1 {
-    margin-top: -10%;
     font-family: "DSEG14Modern-Regular";
     font-size: 80px;
     color: #222222;
@@ -237,10 +229,6 @@ section .page_container .btns a {
     font-weight: 300;
     font-style: normal;
     line-height: 1.5;
-}
-
-#loading p {
-    margin: 40% auto 0 auto;
 }
 
 .indicators {
@@ -365,12 +353,14 @@ section .page_container .btns a {
 .info {
     color: #222222;
     font-size: 2em;
+    filter: blur(0.4px);
 }
 
 .more,
 .top {
     color: #f9f9f9;
     font-size: 2em;
+    filter: blur(0.4px);
 }
 
 .homepage-link {
