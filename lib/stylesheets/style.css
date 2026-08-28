@@ -429,7 +429,7 @@ section .page_container .btns a {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transform: translateZ(0);
-    filter: blur(0.4px);
+    filter: blur(0.4px) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
 }
 
 .digital-clock {
@@ -455,7 +455,7 @@ section .page_container .btns a {
     font-size: 4.5cqw;
 }
 
-.digital-clock h2 {
+.digital-clock h2, .digital-clock span {
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     filter: blur(0.4px);
 }
