@@ -175,13 +175,13 @@ section .page_container .btns a {
     color: #333 !important;
 }
 
-.section-2 a {
+.section-2 .heading a {
     color: #CBD5E1;
     margin: 0;
     padding: 0;
 }
 
-.section-2 a:hover {
+.section-2 .heading a:hover {
     color: #f9f9f9;
     text-decoration: underline;
 }
@@ -203,6 +203,10 @@ section .page_container .btns a {
     margin-top: -60px;
     padding: 0 30px 10px 30px;
     color: #222222;
+}
+
+.section-2, .section-3 {
+    filter: blur(0.3px);
 }
 
 .section-4 {
