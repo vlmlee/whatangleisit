@@ -274,6 +274,73 @@ section .page_container .btns a {
     width: auto;
 }
 
+.hide-ui {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: #222222;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.hide-ui:hover {
+    background: rgba(34, 34, 34, 0.08);
+}
+
+.hide-ui__eye {
+    display: block;
+    overflow: visible;
+}
+
+.hide-ui__lid,
+.hide-ui__slash {
+    opacity: 0;
+    transform-origin: center;
+    transition: opacity 0.22s ease, transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hide-ui__outline,
+.hide-ui__pupil {
+    transition: opacity 0.22s ease, transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.hide-ui.is-hidden .hide-ui__outline,
+.hide-ui.is-hidden .hide-ui__pupil {
+    opacity: 0;
+    transform: scaleY(0.15);
+}
+
+.hide-ui.is-hidden .hide-ui__lid {
+    opacity: 1;
+}
+
+.hide-ui.is-hidden .hide-ui__slash {
+    opacity: 1;
+}
+
+.section-1.is-ui-hidden .pill-toggle,
+.section-1.is-ui-hidden .indicators,
+.section-1.is-ui-hidden .bottom-link.about {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.section-1 .pill-toggle,
+.section-1 .indicators,
+.section-1 .bottom-link.about {
+    transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
 .pill-toggle {
     position: relative;
     display: inline-flex;
