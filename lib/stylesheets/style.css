@@ -8,6 +8,24 @@
     font-weight: normal;
 }
 
+@font-face {
+    font-family: DSEG14Modern-Regular;
+    src: local("DSEG14Modern-Regular.ttf"), local("DSEG14Modern-Regular.ttf"), url(../fonts/DSEG14Modern-Regular.ttf);
+    font-weight: regular;
+}
+
+@font-face {
+    font-family: "DSEG14Modern-Bold";
+    src: local("DSEG14Modern-Bold.ttf"), local("DSEG14Modern-Bold.ttf"), url(../fonts/DSEG14Modern-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "DSEG14Modern-Light";
+    src: local("DSEG14Modern-Light.ttf"), local("DSEG14Modern-Light.ttf"), url(../fonts/DSEG14Modern-Light.ttf);
+    font-weight: 300;
+}
+
 html {
     height: 100%;
 }
@@ -70,7 +88,7 @@ h2 {
     float: left;
     width: 100%;
     margin: 0 auto;
-    filter: blur(5px);
+    filter: blur(.3px);
 }
 
 .main h1 {
@@ -212,6 +230,32 @@ section .page_container .btns a {
 
 #loading {
     background: url(../images/ellipsis.gif) no-repeat center center;
+    background-size: 60px 60px;
+    background-color: white;
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    overflow: hidden;
+    top: 5%;
+    left: 5%;
+    z-index: 9999;
+}
+
+#loading h1 {
+    margin-top: -10%;
+    font-family: "DSEG14Modern-Regular";
+    font-size: 80px;
+    color: #222222;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-weight: 300;
+    font-style: normal;
+}
+
+#loading p {
+    margin: 40% auto 0 auto;
 }
 
 .indicators {

@@ -1,25 +1,21 @@
-var gulp = require('gulp'),
-    lazypipe = require('lazypipe'),
-    cleanCSS = require('gulp-clean-css'),
-    uglify = require('gulp-uglify'),
-    autoprefixer = require('gulp-autoprefixer');
+const gulp = require('gulp');
+const cleanCSS = require('gulp-clean-css');
+const uglify = require('gulp-uglify');
+const autoprefixer = require('gulp-autoprefixer');
 
-var cssTasks = lazypipe()
-    .pipe(autoprefixer)
-    .pipe(cleanCSS)
-    .pipe(gulp.dest, 'public/stylesheets/');
+function css() {
+  return gulp.src('lib/stylesheets/*.css')
+    .pipe(autoprefixer())
+    .pipe(cleanCSS())
+    .pipe(gulp.dest('public/stylesheets/'));
+}
 
-var jsTasks = lazypipe()
-    .pipe(uglify)
-    .pipe(gulp.dest, 'public/javascripts/');
+function js() {
+  return gulp.src('lib/javascripts/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('public/javascripts/'));
+}
 
-gulp.task('js', function() {
-    return gulp.src('lib/javascripts/*.js').pipe(jsTasks());
-})
-
-gulp.task('css', function() {
-    return gulp.src('lib/stylesheets/*.css').pipe(cssTasks());
-})
-gulp.task('default', gulp.series('js', 'css'), function() {
-    console.log('Working on js and css...');
-});
+exports.js = js;
+exports.css = css;
+exports.default = gulp.series(js, css);
