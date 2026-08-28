@@ -165,24 +165,34 @@ section .page_container .btns a {
     color: #f9f9f9;
 }
 
-.section-2 p {  
+.section-2 p {
+    text-align: left;
     padding: 0 30px 10px 30px;
     color: #f9f9f9;
 }
 
 .section-2 .page_container p.heading span {
-    color: black !important;
+    color: #333 !important;
+}
+
+.section-2 a {
+    color: #CBD5E1;
+    margin: 0;
+    padding: 0;
+}
+
+.section-2 a:hover {
+    color: #f9f9f9;
+    text-decoration: underline;
 }
 
 .heading {
-    margin-top: -30px;
-    margin-bottom: 30px;
-    line-height: 1.4em;
+    line-height: 1.5em;
 }
 
 .ex {
     text-align: left;
-    line-height: 1.25em;
+    line-height: 1.5em;
 }
 
 .section-3 {
