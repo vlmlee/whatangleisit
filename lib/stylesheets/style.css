@@ -242,7 +242,7 @@ section .page_container .btns a {
     color: #222222;
 }
 
-.indicators hr {
+.relative-analog-indicators .indicators hr, .absolute-analog-indicators .indicators hr {
     color: #222222;
     background-color: #222222;
 }
@@ -382,7 +382,8 @@ section .page_container .btns a {
 }
 
 .section-1.is-ui-hidden .pill-toggle,
-.section-1.is-ui-hidden .indicators,
+.section-1.is-ui-hidden .relative-analog-indicators,
+.section-1.is-ui-hidden .absolute-analog-indicators,
 .section-1.is-ui-hidden .bottom-link.about {
     opacity: 0;
     visibility: hidden;
@@ -391,7 +392,8 @@ section .page_container .btns a {
 }
 
 .section-1 .pill-toggle,
-.section-1 .indicators,
+.section-1 .relative-analog-indicators,
+.section-1 .absolute-analog-indicators,
 .section-1 .bottom-link.about {
     transition: opacity 0.28s ease, visibility 0.28s ease;
 }
@@ -487,7 +489,7 @@ section .page_container .btns a {
     pointer-events: none;
 }
 
-.analog-clock .clock {
+.analog-clock .absolute-analog-clock, .analog-clock .relative-analog-clock {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -497,7 +499,7 @@ section .page_container .btns a {
     margin-left: -300px;
 }
 
-.analog-clock .clock svg {
+.analog-clock .absolute-analog-clock svg, .analog-clock .relative-analog-clock svg {
     display: block;
     width: 100%;
     height: 100%;
@@ -509,7 +511,7 @@ section .page_container .btns a {
     filter: blur(0.4px) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
 }
 
-.section-1.is-dark .analog-clock .clock svg {
+.section-1.is-dark .analog-clock .absolute-analog-clock svg, .section-1.is-dark .analog-clock .relative-analog-clock svg {
     filter: blur(0.4px) drop-shadow(0 2px 2px rgba(255, 255, 255, 0.2));
 }
 

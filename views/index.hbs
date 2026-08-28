@@ -51,7 +51,31 @@
             </button>
         </div>
         <div class="analog-clock">
-            <div class="clock">
+            <div class="absolute-analog-clock">
+                <svg width="600" height="600" viewBox="0 0 1600 1600" shape-rendering="geometricPrecision">
+                    <defs>
+                        <filter id="arc-aa" x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <g filter="url(#arc-aa)">
+                        <circle class="animated-arc arc-hour" data-arc="h" cx="800" cy="800" r="800" fill="none"
+                            stroke="#222" stroke-width="20" stroke-linecap="round"
+                            transform="rotate(-90 800 800)" />
+                        <circle class="animated-arc arc-minute" data-arc="hm" cx="800" cy="800" r="600" fill="none"
+                            stroke="#222" stroke-width="20" stroke-linecap="round"
+                            transform="rotate(-90 800 800)" />
+                        <circle class="animated-arc arc-second" data-arc="ms" cx="800" cy="800" r="400" fill="none"
+                            stroke="#222" stroke-width="20" stroke-linecap="round"
+                            transform="rotate(-90 800 800)" />
+                    </g>
+                </svg>
+            </div>
+            <div class="relative-analog-clock">
                 <svg width="600" height="600" viewBox="0 0 1600 1600" shape-rendering="geometricPrecision">
                     <defs>
                         <filter id="arc-aa" x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB">
@@ -78,20 +102,39 @@
                     </g>
                 </svg>
             </div>
-            <div class="hour-minute indicators">
-                <h2 class="title"> Hour & Minute </h2>
-                <hr width="98px">
-                <h2 class="hm-content"></h2>
+            <div class="relative-analog-indicators">
+                <div class="hour-minute indicators">
+                    <h2 class="title"> Hour & Minute </h2>
+                    <hr width="98px">
+                    <h2 class="hm-content"></h2>
+                </div>
+                <div class="minute-second indicators">
+                    <h2 class="title"> Minute & Second </h2>
+                    <hr width="106px" >
+                    <h2 class="ms-content"></h2>
+                </div>
+                <div class="hour-second indicators">
+                    <h2 class="title"> Hour & Second </h2>
+                    <hr width="106px">
+                    <h2 class="hs-content"></h2>
+                </div>
             </div>
-            <div class="minute-second indicators">
-                <h2 class="title"> Minute & Second </h2>
-                <hr width="106px" >
-                <h2 class="ms-content"></h2>
-            </div>
-            <div class="hour-second indicators">
-                <h2 class="title"> Hour & Second </h2>
-                <hr width="106px">
-                <h2 class="hs-content"></h2>
+            <div class="absolute-analog-indicators">
+                <div class="hour-minute indicators">
+                    <h2 class="title"> Hour </h2>
+                    <hr width="98px">
+                    <h2 class="h-content-absolute"></h2>
+                </div>
+                <div class="minute-second indicators">
+                    <h2 class="title"> Minute </h2>
+                    <hr width="106px" >
+                    <h2 class="m-content-absolute"></h2>
+                </div>
+                <div class="hour-second indicators">
+                    <h2 class="title"> Second </h2>
+                    <hr width="106px">
+                    <h2 class="s-content-absolute"></h2>
+                </div>
             </div>
         </div>
         <div class="digital-clock">
