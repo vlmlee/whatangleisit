@@ -20,6 +20,6 @@ gulp.task('js', function() {
 gulp.task('css', function() {
     return gulp.src('lib/stylesheets/*.css').pipe(cssTasks());
 })
-gulp.task('default', ['js', 'css'], function() {
+gulp.task('default', gulp.series('js', 'css'), function() {
     console.log('Working on js and css...');
 });
