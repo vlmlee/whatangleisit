@@ -160,18 +160,19 @@ section .page_container .btns a {
 
 .section-2 {
     background-color: #E9605F;
+    color: #f9f9f9;
 }
 
 .section-2 h1 {
     margin-top: -120px;
     padding: 0;
-    color: #f9f9f9;
     font-family: Montserrat, 'Helvetica', monospace;
+    color: #f9f9f9;
 }
 
 .section-2 p {  
-    color: black;
     padding: 0 30px 10px 30px;
+    color: #f9f9f9;
 }
 
 .section-2 .page_container p.heading span {
@@ -226,6 +227,7 @@ section .page_container .btns a {
     -webkit-perspective: 1000;
     backface-visibility: hidden;
     perspective: 1000;
+    pointer-events: none;
 }
 
 #loading {
@@ -233,11 +235,9 @@ section .page_container .btns a {
     background-size: 60px 60px;
     background-color: white;
     position: absolute;
-    height: 90%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
-    top: 5%;
-    left: 5%;
     z-index: 9999;
 }
 
@@ -281,6 +281,51 @@ section .page_container .btns a {
     left: 10%;
 }
 
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    gap: 15px;
+}
+
+.clock-type, .digital-clock-type, .dark-mode {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.clock-type div, .digital-clock-type div, .dark-mode div {
+    height: 50px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.digital-clock {
+    font-family: "DSEG14Modern-Regular";
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 300;
+    font-style: normal;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+}
+
+.digital-clock .absolute-clock, .digital-clock .relative-clock {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5cqw;
+    font-size: 4.5cqw;
+}
 
 /*-----------------------*\
           LINKS

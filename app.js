@@ -4,6 +4,7 @@ var express = require('express'),
     logger = require('morgan'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser'),
+    hbs = require('hbs'),
     routes = require('./routes/index'),
     users = require('./routes/users');
 
@@ -12,6 +13,13 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+
+hbs.registerHelper('assign', function(varName, varValue, options) {
+    if (!options.data.root) {
+        options.data.root = {};
+    }
+    options.data.root[varName] = varValue;
+});
 
 // uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
