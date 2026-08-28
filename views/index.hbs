@@ -5,21 +5,23 @@
             <h1> what angle is it </h1>
         </div>
         <div class="controls">
-            <div class="clock-type">
-                <div class="analog" onclick="setAnalog(true)">
+            <div class="clock-type pill-toggle" data-mode="digital" role="group">
+                <div class="pill-toggle__thumb"></div>
+                <button type="button" class="pill-toggle__option analog" onclick="setAnalog(true)">
                     Analog
-                </div>
-                <div class="digital" onclick="setAnalog(false)">
+                </button>
+                <button type="button" class="pill-toggle__option digital is-active" onclick="setAnalog(false)">
                     Digital
-                </div>
+                </button>
             </div>
-            <div class="digital-clock-type">
-                <div class="absolute" onclick="setAbsolute(true)">
+            <div class="clock-mode pill-toggle" data-mode="absolute" role="group">
+                <div class="pill-toggle__thumb"></div>
+                <button type="button" class="pill-toggle__option absolute is-active" onclick="setAbsolute(true)">
                     Absolute
-                </div>
-                <div class="relative" onclick="setAbsolute(false)">
+                </button>
+                <button type="button" class="pill-toggle__option relative" onclick="setAbsolute(false)">
                     Relative
-                </div>
+                </button>
             </div>
             <div class="dark-mode">
                 <div class="light" onclick="setDarkMode(true)">

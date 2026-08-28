@@ -265,16 +265,73 @@ section .page_container .btns a {
     gap: 15px;
 }
 
-.clock-type, .digital-clock-type, .dark-mode {
+.clock-type, .clock-mode, .dark-mode {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 15px;
+    height: 40px;
+    width: auto;
 }
 
-.clock-type div, .digital-clock-type div, .dark-mode div {
-    height: 50px;
-    width: 100px;
+.pill-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: stretch;
+    gap: 0;
+    padding: 3px;
+    background: rgba(34, 34, 34, 0.08);
+    border-radius: 999px;
+    font-family: Montserrat, 'Helvetica', monospace;
+}
+
+.pill-toggle__thumb {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    width: calc((100% - 6px) / 2);
+    border-radius: 999px;
+    background: #222222;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.pill-toggle[data-mode="digital"] .pill-toggle__thumb, .pill-toggle[data-mode="relative"] .pill-toggle__thumb {
+    transform: translateX(100%);
+}
+
+.pill-toggle[data-mode="analog"] .pill-toggle__thumb, .pill-toggle[data-mode="absolute"] .pill-toggle__thumb {
+    transform: translateX(0);
+}
+
+.pill-toggle__option {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 0;
+    min-width: 88px;
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 999px;
+    background: transparent;
+    color: #222222;
+    font: inherit;
+    font-size: 0.85em;
+    letter-spacing: 0.02em;
     cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.pill-toggle__option.is-active {
+    color: #ffffff;
+}
+
+.pill-toggle__option:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
 }
 
 .analog-clock {
