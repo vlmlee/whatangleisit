@@ -88,7 +88,6 @@ h2 {
     float: left;
     width: 100%;
     margin: 0 auto;
-    filter: blur(.3px);
 }
 
 .main h1 {
@@ -148,6 +147,7 @@ section .page_container .btns a {
 
 .section-1 {
     background-color: #ffffff;
+    position: relative;
 }
 
 .section-1 h1 {
@@ -304,6 +304,36 @@ section .page_container .btns a {
     cursor: pointer;
 }
 
+.analog-clock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.analog-clock .clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    margin-top: -300px;
+    margin-left: -300px;
+}
+
+.analog-clock .clock svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    shape-rendering: geometricPrecision;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
 .digital-clock {
     font-family: "DSEG14Modern-Regular";
     text-align: center;
@@ -337,6 +367,7 @@ section .page_container .btns a {
     right: 10%;
     font-family: Montserrat, 'Helvetica', monospace;
     text-decoration: none;
+    filter: blur(.3px);
 }
 
 .about,
@@ -445,4 +476,31 @@ section .page_container .btns a {
         -webkit-transform: translateY(0);
         transform: translateY(0);
     }
+}
+
+.animated-arc {
+    shape-rendering: geometricPrecision;
+    stroke-linejoin: round;
+    transition: stroke-dashoffset 1s linear;
+    will-change: stroke-dashoffset;
+}
+
+.arc-hour {
+    stroke-dasharray: 5026.55;
+    stroke-dashoffset: 5026.55;
+}
+
+.arc-outer {
+    stroke-dasharray: 3769.91;
+    stroke-dashoffset: 3769.91;
+}
+
+.arc-mid {
+    stroke-dasharray: 2513.27;
+    stroke-dashoffset: 2513.27;
+}
+
+.arc-inner {
+    stroke-dasharray: 1256.64;
+    stroke-dashoffset: 1256.64;
 }

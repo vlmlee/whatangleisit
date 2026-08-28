@@ -30,42 +30,63 @@
                 </div>
             </div>
         </div>
-            <div class="analog-clock">
-                <div class="clock">
-                    <!-- The ordering works like a stack. The first item will be at the bottom. -->
-                    <img src="/images/hour.v2.svg" class="clockhand hourhand"></img>
-                    <img src="/images/minute.v2.svg" class="clockhand minutehand"></img>
-                    <img src="/images/second.v2.svg" class="clockhand secondhand"></img>
-                </div>
-                <div class="hour-minute indicators">
-                    <h2 class="title"> Hour & Minute </h2>
-                    <hr width="98px" color="#222222">
-                    <h2 class="hm-content"></h2>
-                </div>
-                <div class="minute-second indicators">
-                    <h2 class="title"> Minute & Second </h2>
-                    <hr width="106px" color="#222222">
-                    <h2 class="ms-content"></h2>
-                </div>
-                <div class="hour-second indicators">
-                    <h2 class="title"> Hour & Second </h2>
-                    <hr width="106px" color="#222222">
-                    <h2 class="hs-content"></h2>
-                </div>
+        <div class="analog-clock">
+            <div class="clock">
+                <svg width="600" height="600" viewBox="0 0 1600 1600" shape-rendering="geometricPrecision">
+                    <defs>
+                        <filter id="arc-aa" x="-2%" y="-2%" width="104%" height="104%" color-interpolation-filters="sRGB">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="0.6" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <g filter="url(#arc-aa)">
+                        <circle class="animated-arc arc-hour" data-arc="h" cx="800" cy="800" r="800" fill="none"
+                            stroke="#222" stroke-width="20" stroke-linecap="round"
+                            transform="rotate(-90 800 800)" />
+                        <circle class="animated-arc arc-outer" data-arc="hm" cx="800" cy="800" r="600" fill="none"
+                            stroke="#222" stroke-width="20" stroke-linecap="round"
+                            transform="rotate(-90 800 800)" />
+                        <circle class="animated-arc arc-mid" data-arc="ms" cx="800" cy="800" r="400" fill="none"
+                            stroke="#222" stroke-width="20" stroke-linecap="round"
+                            transform="rotate(-90 800 800)" />
+                        <circle class="animated-arc arc-inner" data-arc="hs" cx="800" cy="800" r="200" fill="none"
+                            stroke="#222" stroke-width="20" stroke-linecap="round"
+                            transform="rotate(-90 800 800)" />
+                    </g>
+                </svg>
             </div>
-            <div class="digital-clock">
-                <div class="absolute-clock">
-                    <h2 class="h-content-absolute"></h2>
-                    <h2 class="m-content-absolute"></h2>
-                    <h2 class="s-content-absolute"></h2>
-                </div>
-                <div class="relative-clock">
-                    <h2 class="h-content-absolute"></h2>
-                    <h2 class="hm-content"></h2>
-                    <h2 class="ms-content"></h2>
-                    <h2 class="hs-content"></h2>
-                </div>
+            <div class="hour-minute indicators">
+                <h2 class="title"> Hour & Minute </h2>
+                <hr width="98px" color="#222222">
+                <h2 class="hm-content"></h2>
             </div>
+            <div class="minute-second indicators">
+                <h2 class="title"> Minute & Second </h2>
+                <hr width="106px" color="#222222">
+                <h2 class="ms-content"></h2>
+            </div>
+            <div class="hour-second indicators">
+                <h2 class="title"> Hour & Second </h2>
+                <hr width="106px" color="#222222">
+                <h2 class="hs-content"></h2>
+            </div>
+        </div>
+        <div class="digital-clock">
+            <div class="absolute-clock">
+                <h2 class="h-content-absolute"></h2>
+                <h2 class="m-content-absolute"></h2>
+                <h2 class="s-content-absolute"></h2>
+            </div>
+            <div class="relative-clock">
+                <h2 class="h-content-absolute"></h2>
+                <h2 class="hm-content"></h2>
+                <h2 class="ms-content"></h2>
+                <h2 class="hs-content"></h2>
+            </div>
+        </div>
         <!--//
             With the use of the onepage-scroll plugin, the link will move to the next section.
             For more info on onepage-scroll, visit https://github.com/peachananr/onepage-scroll.
@@ -149,7 +170,7 @@
             <a href="/#home" class="top hvr-wobble-vertical">back to top</a>
         </div>
         <div class="footer">
-            &copy; 2017 Created by Michael Lee
+            &copy; 2017-2026 Created by Michael Lee.
         </div>
     </section>
 </div>
