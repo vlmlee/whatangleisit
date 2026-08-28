@@ -49,7 +49,7 @@ body {
 }
 
 hr {
-    height: 5px;
+    height: 3px;
     color: #444444;
 }
 
@@ -214,22 +214,6 @@ section .page_container .btns a {
         COMPONENTS
 \*-----------------------*/
 
-.clockhand {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    height: 90%;
-    width: 90%;
-    /* included below to severely reduce CPU usage (!) */
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    backface-visibility: hidden;
-    perspective: 1000;
-    pointer-events: none;
-}
-
 #loading {
     background: url(../images/ellipsis.gif) no-repeat center center;
     background-size: 60px 60px;
@@ -249,9 +233,10 @@ section .page_container .btns a {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 10px;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
     font-weight: 300;
     font-style: normal;
+    line-height: 1.5;
 }
 
 #loading p {
@@ -332,6 +317,7 @@ section .page_container .btns a {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transform: translateZ(0);
+    filter: blur(0.4px);
 }
 
 .digital-clock {
@@ -355,6 +341,11 @@ section .page_container .btns a {
     align-items: center;
     gap: 4.5cqw;
     font-size: 4.5cqw;
+}
+
+.digital-clock h2 {
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    filter: blur(0.4px);
 }
 
 /*-----------------------*\
@@ -483,24 +474,4 @@ section .page_container .btns a {
     stroke-linejoin: round;
     transition: stroke-dashoffset 1s linear;
     will-change: stroke-dashoffset;
-}
-
-.arc-hour {
-    stroke-dasharray: 5026.55;
-    stroke-dashoffset: 5026.55;
-}
-
-.arc-outer {
-    stroke-dasharray: 3769.91;
-    stroke-dashoffset: 3769.91;
-}
-
-.arc-mid {
-    stroke-dasharray: 2513.27;
-    stroke-dashoffset: 2513.27;
-}
-
-.arc-inner {
-    stroke-dasharray: 1256.64;
-    stroke-dashoffset: 1256.64;
 }
