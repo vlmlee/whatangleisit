@@ -50,7 +50,6 @@ body {
 
 hr {
     height: 3px;
-    color: #444444;
 }
 
 a {
@@ -150,6 +149,10 @@ section .page_container .btns a {
     position: relative;
 }
 
+.section-1.is-dark {
+    background-color: #222222;
+}
+
 .section-2 {
     background-color: #E9605F;
     color: #f9f9f9;
@@ -239,6 +242,11 @@ section .page_container .btns a {
     color: #222222;
 }
 
+.indicators hr {
+    color: #222222;
+    background-color: #222222;
+}
+
 .hour-minute {
     top: 10%;
     left: 10%;
@@ -252,6 +260,25 @@ section .page_container .btns a {
 .hour-second {
     bottom: 10%;
     left: 10%;
+}
+
+.section-1.is-dark .hour-minute h2, .section-1.is-dark .hour-minute hr,
+.section-1.is-dark .minute-second h2, .section-1.is-dark .minute-second hr,
+.section-1.is-dark .hour-second h2, .section-1.is-dark .hour-second hr {
+    color: #f9f9f9;
+}
+
+.section-1.is-dark .hour-minute hr,
+.section-1.is-dark .minute-second hr,
+.section-1.is-dark .hour-second hr {
+    background-color: #f9f9f9;
+}
+
+.section-1.is-dark .absolute-clock h2,
+.section-1.is-dark .absolute-clock span,
+.section-1.is-dark .relative-clock h2,
+.section-1.is-dark .relative-clock span {
+    color: #f9f9f9;
 }
 
 .controls {
@@ -274,7 +301,8 @@ section .page_container .btns a {
     width: auto;
 }
 
-.hide-ui {
+.hide-ui,
+.dark-mode__toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -290,8 +318,35 @@ section .page_container .btns a {
     transition: color 0.2s ease, background 0.2s ease;
 }
 
-.hide-ui:hover {
+.hide-ui:hover,
+.dark-mode__toggle:hover {
     background: rgba(34, 34, 34, 0.08);
+}
+
+.dark-mode__icon {
+    display: block;
+    overflow: visible;
+}
+
+.dark-mode__sun,
+.dark-mode__moon {
+    transform-origin: center;
+    transition: opacity 0.22s ease, transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark-mode__moon {
+    opacity: 0;
+    transform: rotate(-45deg) scale(0.6);
+}
+
+.dark-mode.is-dark .dark-mode__sun {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.6);
+}
+
+.dark-mode.is-dark .dark-mode__moon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
 }
 
 .hide-ui__eye {
@@ -341,6 +396,11 @@ section .page_container .btns a {
     transition: opacity 0.28s ease, visibility 0.28s ease;
 }
 
+.section-1.is-dark .hide-ui,
+.section-1.is-dark .dark-mode__toggle {
+    color: #f9f9f9;
+}
+
 .pill-toggle {
     position: relative;
     display: inline-flex;
@@ -350,6 +410,10 @@ section .page_container .btns a {
     background: rgba(34, 34, 34, 0.08);
     border-radius: 999px;
     font-family: Montserrat, 'Helvetica', monospace;
+}
+
+.section-1.is-dark .pill-toggle {
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .pill-toggle__thumb {
@@ -362,6 +426,11 @@ section .page_container .btns a {
     background: #222222;
     transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
+}
+
+.section-1.is-dark .pill-toggle .pill-toggle__thumb {
+    background: #f9f9f9;
+    color: #222222;
 }
 
 .pill-toggle[data-mode="digital"] .pill-toggle__thumb, .pill-toggle[data-mode="relative"] .pill-toggle__thumb {
@@ -392,8 +461,16 @@ section .page_container .btns a {
     transition: color 0.2s ease;
 }
 
+.section-1.is-dark .pill-toggle__option {
+    color: #f9f9f9;
+}
+
 .pill-toggle__option.is-active {
     color: #ffffff;
+}
+
+.section-1.is-dark .pill-toggle__option.is-active {
+    color: #222222;
 }
 
 .pill-toggle__option:disabled {
@@ -430,6 +507,10 @@ section .page_container .btns a {
     backface-visibility: hidden;
     transform: translateZ(0);
     filter: blur(0.4px) drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
+}
+
+.section-1.is-dark .analog-clock .clock svg {
+    filter: blur(0.4px) drop-shadow(0 2px 2px rgba(255, 255, 255, 0.2));
 }
 
 .digital-clock {
@@ -478,6 +559,10 @@ section .page_container .btns a {
     color: #222222;
     font-size: 2em;
     filter: blur(0.4px);
+}
+
+.section-1.is-dark .about {
+    color: #f9f9f9;
 }
 
 .more,
